@@ -1,18 +1,49 @@
 
 <script setup>
+
+import { ref } from 'vue'
+
+const count = ref(0)
+
+var indiceImagenFECTH=ref(0);
+var ImagenFECTH=ref([]);
+
 defineProps({
   msg: {
     type: String,
     required: true
-  },
+  },  
   indiceImagen:0,
-  imagem: [],
+  imagen:0,
 })
-//
+
+
+
+    const source=      
+    "https://ssd-2023-240gb----youtube.s3.us-west-2.amazonaws.com/ssd-2023-240gb.json"
+    fetch(source)
+    .then(response => response.json())
+    .then(data => ImagenFECTH = data).finally(()=>
+    {
+//console.log("  +     "+ImagenFECTH)      indiceImagenFECTH=ImagenFECTH.length;
+    }
+    )
 </script>
 
-<template>
+<script >
+/*
+  <button @click="count++">{{ count }}</button>
 
+      //console.log("  +     "+this.imagem.length)
+    }
+    )
+  */  
+    
+</script>
+
+
+<template>
+  <button @click="indiceImagenFECTH++">{{ indiceImagenFECTH }}</button>
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -60,14 +91,17 @@ Certificados obtidos até o ano 2023<br>
 <!--Elemento da Matriz---------> 
 <div class="col-md-4">
 <div class="card mb-4 box-shadow">
-<!--Image---------><img id="imagem-3" class="card-img-top" alt="Image 3" style="height: 225px; width: 100%; display: block;"   >          
-
+<!--Image--------->
+<img :src="ImagenFECTH[indiceImagenFECTH]" id="imagem-3" class="card-img-top" alt="Image 3" style="height: 225px; width: 100%; display: block;"   >          
+{{indiceImagenFECTH}}
+{{ ImagenFECTH.length }}
 </div>
 </div>
 <!--COL------>           
 <div class="col-md-4">
 <div class="card mb-4 box-shadow">
-<!--Image---------><img id="imagem-3" class="card-img-top" alt="Image 3" style="height: 225px; width: 100%; display: block;"   >          
+<!--Image--------->
+<img :src="ImagenFECTH[indiceImagenFECTH+1]" id="imagem-3" class="card-img-top" alt="Image 3" style="height: 225px; width: 100%; display: block;"   >          
   
 </div>
 </div>
@@ -75,7 +109,8 @@ Certificados obtidos até o ano 2023<br>
 <!--COL. ------>           
 <div class="col-md-4">
 <div class="card mb-4 box-shadow">
-<!--Image---------><img id="imagem-3" class="card-img-top" alt="Image 3" style="height: 225px; width: 100%; display: block;"   >          
+<!--Image--------->
+<img :src="ImagenFECTH[indiceImagenFECTH+2]" id="imagem-3" class="card-img-top" alt="Image 3" style="height: 225px; width: 100%; display: block;"   >          
   </div>
 </div>
 </div>
