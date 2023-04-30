@@ -99,6 +99,8 @@ Certificados obtidos até o ano 2023<br>
 <div class="card mb-4 box-shadow">
 <!--Image--------->
 <img :src="ImagenFECTH[indiceImagenFECTH]" id="imagem-3" class="card-img-top" alt="Image 3" style="height: 225px; width: 100%; display: block;"   >          
+{{indiceImagenFECTH}}
+{{ ImagenFECTH.length }}
 </div>
 </div>
 <!--COL------>           

@@ -1,0 +1,11 @@
+
+
+export NODE_OPTIONS=--openssl-legacy-provider
+
+Examples:
+
+https://github.com/gwenf/vue3-fcc-course-static-code
+
+https://github.com/gwenf/vue3-fcc-course-vue-cli-product-cart-demo
+
+
