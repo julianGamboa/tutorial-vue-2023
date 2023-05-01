@@ -1,16 +1,10 @@
-<template>
-  
-  
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-
-  <Novas></Novas>
-
+<template>  
+    <HelloWorld />
 </template>
 
 <script>
 /*
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-
+<HelloWorld msg="Componente <Novas></Novas> NOVAS"/>
 */
 
 

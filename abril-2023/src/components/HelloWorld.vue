@@ -1,43 +1,233 @@
 <script>
+/*
+    let indiceImagenFECTH =0;
+    let functionsetInterval=0;
 
-//import Novas3imagens from './Novas3imagens.vue'
+    var ImagenFECTH=[];
+var functionsetInterval=0;
+var indiceImagenFECTH=0; 
+
+*/
+
+import { defineComponent } from 'vue'
 
 
+
+
+export default defineComponent({
+  data() {
+    return {
+      counter: 0
+    }
+  },
+  mounted() {
+    setInterval(() => {
+      this.counter++
+    }, 1000)  
+}
+
+
+    /*
+      data() {
+    const source=      
+    "https://ssd-2023-240gb----youtube.s3.us-west-2.amazonaws.com/ssd-2023-240gb.json"
+    fetch(source)
+    .then(response => response.json())
+    .then(data => this.ImagenFECTH = data)
+
+
+    const source=      
+    "https://ssd-2023-240gb----youtube.s3.us-west-2.amazonaws.com/ssd-2023-240gb.json"
+    fetch(source)
+    .then(response => response.json())
+    .then(data => 
+    {
+      this.ImagenFECTH = data;
+      console.log(" "+data.length+"  "+this.ImagenFECTH )
+    }
+    )
+
+    return { 
+      stop,
+      returnIndiceImagenFECTH : Math.floor(Math.random()*1000),
+      returnImagenFECTH: this.ImagenFECTH ,
+      //returnImagenFECTH: [] ,
+      returnFunctionsetInterval: functionsetInterval,
+    }
+  }
+      */
+});
+/*
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
   }
 }
+
+var indiceImagenFECTH=0; 
+//var ImagenFECTH=[]; 
+var functionsetInterval=0;
+
+export default defineComponent({
+  name: 'HelloWorld',
+
+  props: {
+    msg: String
+  },
+  beforeCreate() {
+    indiceImagenFECTH=100;
+    
+    functionsetInterval = setInterval(() => {
+      this.indiceImagenFECTH++;
+//      console.log("increment     "+this.indiceImagenFECTH);   
+   }, 3*1000)},
+   methods: {
+    increment()
+    {
+      this.indiceImagenFECTH=0;
+      this.functionsetInterval = setInterval(() => {
+        this.indiceImagenFECTH++;
+        //console.log("increment     "+this.indiceImagenFECTH);   
+
+     }, 3*1000);
+console.log("increment"+this.functionsetInterval);   
+    }
+   },   
+   data() {
+    const source=      
+    "https://ssd-2023-240gb----youtube.s3.us-west-2.amazonaws.com/ssd-2023-240gb.json"
+    fetch(source)
+    .then(response => response.json())
+    .then(data => this.ImagenFECTH = data)
+    
+
+    return { 
+      stop,
+      functionsetInterval: functionsetInterval,
+      indiceImagenFECTH : Math.floor(Math.random()*1000),
+      ImagenFECTH: {},
+    }
+  }
+})
+*/
+
 </script>
 
 
 <template>
 
-  
-  
-    <div class="hello">
-  
-          <h1>{{ msg }}</h1>
-  
+<div id="counter">
+  Contador: {{ counter }}
+</div>
+
+
+<!-- Bootstrap CSS 
+  <button @click="indiceImagenFECTH++">{{ indiceImagenFECTH }}</button>
+
+-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!--<button @click="increment"> {{functionsetInterval}} </button>--------->
+<header>
+    <div class="bg-dark collapse" id="navbarHeader" >
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4 class="text-white">Informações</h4>
+            <p class="text-muted">
+Certificados obtidos até o ano 2023<br>
+</p>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4 class="text-white">Julian Gamboa</h4>
+            <ul class="list-unstyled">
+              <li><a href="https://github.com/julian-gamboa-bahia" class="text-white">Github</a></li>
+              <li><a href="https://github.com/julian-gamboa-ensino" class="text-white">Github Eduativo</a></li>
+              <li><a href="https://www.linkedin.com/in/julian-gamboa-bahia/" class="text-white">Linkeind</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-  </template>
+    <div class="navbar navbar-dark bg-dark box-shadow">
+      <div class="container d-flex justify-content-between">
+<a href="" class="navbar-brand d-flex align-items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+        </a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+</header>
+
+<!--END Header do Boostrap--------->          
+<main role="main">
+<div class="album py-5 bg-light">
+<div class="container">          
+<!--ROW. Inicio---------> 
+<div class="row">
+<!--Elemento da Matriz---------> 
+<div class="col-md-4">
+<div class="card mb-4 box-shadow">
+
+  <img 
+  
+  class="card-img-top" 
+  style="height: 225px; width: 100%; display: block;"   >          
+
+<!--Image
+  :src="returnImagenFECTH[0]" 
+<img :src="ImagenFECTH[indiceImagenFECTH]" id="imagem-3" class="card-img-top" alt="Image 3" style="height: 225px; width: 100%; display: block;"   >          
+--------->
+</div>
+</div>
+<!--COL------>           
+<div class="col-md-4">
+<div class="card mb-4 box-shadow">
+  <img 
+  src="" 
+  class="card-img-top" 
+  style="height: 225px; width: 100%; display: block;"   >          
+
+<!--Image-
+<img :src="ImagenFECTH[indiceImagenFECTH+1]" id="imagem-3" class="card-img-top" alt="Image 3" style="height: 225px; width: 100%; display: block;"   >          
+--------->  
+</div>
+</div>
+<!--END: COL. ------>      
+<!--COL. ------>           
+<div class="col-md-4">
+<div class="card mb-4 box-shadow">
+  <img 
+  src="" 
+  class="card-img-top" 
+  style="height: 225px; width: 100%; display: block;"   >          
+<!--Image-
+<img :src="ImagenFECTH[indiceImagenFECTH+2]" id="imagem-3" class="card-img-top" alt="Image 3" style="height: 225px; width: 100%; display: block;"   >          
+--------->
+  </div>
+</div>
+</div>
+<!--END: COL. ------>      
+</div>  
+<!--END: ROW. ------>
 
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
+</div>
+</main>
+
+
+
+<footer class="text-muted">
+    <div class="container">
+
+      <p>Colocado no meu <a href="https://github.com/julian-gamboa-ensino/julian-gamboa-ensino.github.io/tree/aws-lambda-sam-cli/abril-2023-fonte">Github de ensino</a> </p>                        
+    </div>
+  </footer>
+
+
+
+</template>
+
+
