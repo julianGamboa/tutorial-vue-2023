@@ -1,5 +1,5 @@
 {
-  "name": "2023-abril",
+  "name": "maio-02-madrid",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -8,8 +8,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "^4.0.0",
-    "@vue/cli-service": "^5.0.8",
     "vue": "^3.2.47"
   },
   "devDependencies": {

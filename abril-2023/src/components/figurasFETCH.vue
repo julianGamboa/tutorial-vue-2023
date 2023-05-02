@@ -1,146 +1,37 @@
-<script>
+
+<script setup>
 /*
-    let indiceImagenFECTH =0;
-    let functionsetInterval=0;
-
-    var ImagenFECTH=[];
-var functionsetInterval=0;
-var indiceImagenFECTH=0; 
-
+Example: https://jasonwatmore.com/vue-3-fetch-data-from-an-api
 */
+import { ref } from 'vue';
 
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  
-beforeCreate()
-  {
-
-
-  },
-  data() {
-
-    return {
-      counter: 0,
-      //returnImagenFECTH: ImagenFECTH ,
-      returnImagenFECTH: this.ImagenFECTH, //[] ,//this.ImagenFECTH ,
-    }
-
-  },
-  //mounted() , //beforeCreate
-  mounted() {
-
-
-    
-    setInterval(() => {
-      this.counter++
-    }, 1000)  
-
-    
-
-
-}
-
-
-    /*
-      data() {
-    const source=      
-    "https://ssd-2023-240gb----youtube.s3.us-west-2.amazonaws.com/ssd-2023-240gb.json"
-    fetch(source)
-    .then(response => response.json())
-    .then(data => this.ImagenFECTH = data)
+var ImagenFECTH = ref(null);
+var indiceImagenFECTH=ref(0);
 
 
     const source=      
     "https://ssd-2023-240gb----youtube.s3.us-west-2.amazonaws.com/ssd-2023-240gb.json"
+    
     fetch(source)
     .then(response => response.json())
-    .then(data => 
+    .then(data => ImagenFECTH.value = data).
+    then(() => 
     {
-      this.ImagenFECTH = data;
-      console.log(" "+data.length+"  "+this.ImagenFECTH )
-    }
-    )
+//console.log("    (ImagenFECTH.value)     "      +ImagenFECTH.value.length+"    ");
+    })    
 
-    return { 
-      stop,
-      returnIndiceImagenFECTH : Math.floor(Math.random()*1000),
-      returnImagenFECTH: this.ImagenFECTH ,
-      //returnImagenFECTH: [] ,
-      returnFunctionsetInterval: functionsetInterval,
-    }
-  }
-      */
-});
-/*
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
-}
 
-var indiceImagenFECTH=0; 
-//var ImagenFECTH=[]; 
-var functionsetInterval=0;
-
-export default defineComponent({
-  name: 'HelloWorld',
-
-  props: {
-    msg: String
-  },
-  beforeCreate() {
-    indiceImagenFECTH=100;
-    
-    functionsetInterval = setInterval(() => {
-      this.indiceImagenFECTH++;
+   //var functionsetInterval = 
+   setInterval(() => {
+      indiceImagenFECTH.value++;
 //      console.log("increment     "+this.indiceImagenFECTH);   
-   }, 3*1000)},
-   methods: {
-    increment()
-    {
-      this.indiceImagenFECTH=0;
-      this.functionsetInterval = setInterval(() => {
-        this.indiceImagenFECTH++;
-        //console.log("increment     "+this.indiceImagenFECTH);   
-
-     }, 3*1000);
-console.log("increment"+this.functionsetInterval);   
-    }
-   },   
-   data() {
-    const source=      
-    "https://ssd-2023-240gb----youtube.s3.us-west-2.amazonaws.com/ssd-2023-240gb.json"
-    fetch(source)
-    .then(response => response.json())
-    .then(data => this.ImagenFECTH = data)
-    
-
-    return { 
-      stop,
-      functionsetInterval: functionsetInterval,
-      indiceImagenFECTH : Math.floor(Math.random()*1000),
-      ImagenFECTH: {},
-    }
-  }
-})
-*/
+   }, 3*1000)
 
 </script>
 
-
 <template>
-
-<div id="counter">
-  Contador: {{ counter }}
-  <br>
-  returnImagenFECTH: {{returnImagenFECTH}}
-</div>
-
-
 <!-- Bootstrap CSS 
-  <button @click="indiceImagenFECTH++">{{ indiceImagenFECTH }}</button>
+
 
 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -189,7 +80,7 @@ Certificados obtidos até o ano 2023<br>
 <div class="card mb-4 box-shadow">
 
   <img 
-  
+  :src="ImagenFECTH[indiceImagenFECTH]"
   class="card-img-top" 
   style="height: 225px; width: 100%; display: block;"   >          
 
@@ -203,7 +94,7 @@ Certificados obtidos até o ano 2023<br>
 <div class="col-md-4">
 <div class="card mb-4 box-shadow">
   <img 
-  src="" 
+  :src="ImagenFECTH[indiceImagenFECTH+1]"
   class="card-img-top" 
   style="height: 225px; width: 100%; display: block;"   >          
 
@@ -217,8 +108,8 @@ Certificados obtidos até o ano 2023<br>
 <div class="col-md-4">
 <div class="card mb-4 box-shadow">
   <img 
-  src="" 
-  class="card-img-top" 
+  :src="ImagenFECTH[indiceImagenFECTH+2]"
+   class="card-img-top" 
   style="height: 225px; width: 100%; display: block;"   >          
 <!--Image-
 <img :src="ImagenFECTH[indiceImagenFECTH+2]" id="imagem-3" class="card-img-top" alt="Image 3" style="height: 225px; width: 100%; display: block;"   >          
@@ -245,6 +136,6 @@ Certificados obtidos até o ano 2023<br>
 
 
 
+
+
 </template>
-
-

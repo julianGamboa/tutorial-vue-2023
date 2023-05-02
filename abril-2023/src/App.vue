@@ -1,5 +1,5 @@
 <template>  
-    <HelloWorld />
+    <figurasFETCH/>
 </template>
 
 <script>
@@ -8,12 +8,14 @@
 */
 
 
-import HelloWorld from './components/HelloWorld.vue'
+//import HelloWorld from './components/HelloWorld.vue'
+import figurasFETCH from './components/figurasFETCH.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+  //  HelloWorld,
+    figurasFETCH
   }
 }
 </script>
